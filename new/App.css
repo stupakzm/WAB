@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhaijaan|Ubuntu');
+body {
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    background-color: rgba(125, 204, 233, 1);
+    margin-top: 5rem;
+	
+  }
+  header {
+	position: relative;
+    color: #fff;
+    z-index: 999;
+}
+
+nav ul {
+	list-style: none;
+	display: flex;
+    margin-top: 2rem;
+}
+
+nav li {
+	margin-right: 1rem;
+}
+
+nav a {
+	color: #fff;
+	text-decoration: none;
+}
+
+  a {
+	background-color: rgba(96, 145, 203, 1);
+	color: #fff;
+	padding: 1rem 2rem;
+	border-radius: 2rem;
+	text-decoration: none;
+	transition: all 0.2s ease-in-out;
+}
+a:hover {
+	background-color: #fff;
+	color: rgba(96, 145, 203, 1);
+}
+  .wrapper {
+    text-align: center;
+
+  }
+  .wrapper button{
+    background-color: rgb(113, 96, 207);
+	color: white;
+	border: none;
+	border-radius: 15px;
+	padding: 10px;
+	font-size: 16px;
+	cursor: pointer;
+	width: 30%;
+  }
+  .wrapper button:hover{
+    background-color:#3439d086 ;
+	transition: all 0.2s ease-in-out;
+  }
+  
+  .row {
+    transform: translateX(100px) translateY(50px);
+    display: flex;
+    margin-left: 15%;
+  }
+  .choice1 p{
+    transform: translateY(-98px);
+  }
+  .choice1 img{
+    transform: translateY(-100px);
+  }
+  .choice1 input{
+    transform: translateY(-60px)translateX(40px);
+  }
+  
+  .choice2 img{
+    transform: translateY(-60px)translateX(140px);
+    width: 70%;
+  }
+  .choice2 input{
+    transform: translateY(-20px)translateX(80px);
+  }
+  .choice2 p{
+    transform: translateY(-5px)translateX(30px);
+  }
+  .cropped-ofp {
+    width: 350px; 
+    height: 350px; 
+    object-fit: cover;
+    object-position: 50% 50%; 
+  }
+  
+  .fa-map-marker-alt,
+  .fa-dot-circle {
+    color: #fff;
+  }
+  
+  /*Jumbotron*/
+  .jumbotron {
+    background-color: transparent;
+    margin: 0;
+    padding: 10px;
+    transform: translateY(-60px);
+  }
+  
+  .jumbotron h1 {
+    letter-spacing: 2.5px;
+    font-size: 3.5em;
+  }
+  
+  .jumbotron h1,
+  .jumbotron h2,
+  .jumbotron p {
+    text-align: center;
+  }
+  
+  /*map*/
+  #googleMap {
+    width: 80%;
+    height: 400px;
+    margin: 10px auto;
+  }
+  
+  /*output box*/
+  #output {
+    text-align: center;
+    font-size: 2em;
+    margin: 20px auto;
+  }
+  
+  #mode {
+    color: black;
+  }
+  .input{
+    padding: 13px 0px 13px 25px;
+    width: 100%;
+    text-align: center;
+    border: 2px solid #dddddd;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    word-spacing: 3px;
+    outline: none;
+    font-size: 16px;
+    color: #555555;
+  }
+  
+  .card-grp{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .card-item{
+    width: 48%;
+  }
+  
+  .space{
+    margin-bottom: 20px;
+  }
+  
+  .icon-relative{
+    position: relative;
+  }
+  
+  .icon-relative .fas,
+  .icon-relative .far{
+    position: absolute;
+    bottom: 12px;
+    left: 15px;
+    font-size: 20px;
+    color: #555555;
+  }
+  
+  .btn{
+    margin-top: 40px;
+    background: #2196F3;
+    padding: 12px;
+    text-align: center;
+    color: #f8f8f8;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+ @media screen and (max-width: 420px){
+    .card-grp{
+      flex-direction: column;
+    }
+    .card-item{
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .btn{
+      margin-top: 20px;
+    }
+  }
+  

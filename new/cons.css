@@ -1,0 +1,152 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.error {
+	display: block;
+}
+	  
+
+
+body {
+	
+	background-repeat: no-repeat;
+	background-size: 900px;
+	background-position-x: center;
+	background-position-y: 120px;
+	background-color: rgba(125, 204, 233, 1);
+	font-family: Arial, sans-serif;
+}
+
+
+header {
+	background-color: rgba(96, 145, 203, 1);
+	color: #fff;
+	padding: 1rem;
+	z-index: 999;
+	position: fixed;
+	width: 150%;
+}
+
+nav ul {
+	list-style: none;
+	display: flex;
+}
+
+nav li {
+	margin-right: 1rem;
+}
+
+nav a {
+	color: #fff;
+	text-decoration: none;
+}
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 70vh;
+}
+
+section {
+	text-align: center;
+	margin-bottom: 10%;
+	color: #fff;
+}
+a {
+	background-color: rgba(96, 145, 203, 1);
+	color: #fff;
+	padding: 1rem 2rem;
+	border-radius: 2rem;
+	text-decoration: none;
+	transition: all 0.2s ease-in-out;
+}
+a:hover {
+	background-color: #fff;
+	color: rgba(96, 145, 203, 1);
+}
+.order{
+	background-color: rgba(22, 59, 154, 0.42);
+	height: 550px;
+transform: translateY(100px);
+	width: 130%;
+	border-radius: 150px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+}
+.order h2{
+	position: relative;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 50px;
+	
+	align-items: center;
+	text-align: center;
+	
+	color: #FFFFFF;
+	
+}
+
+.order img{
+
+	width: 10%;
+	float: right;
+}
+
+.order form {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.order label {
+
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.order input {
+	
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 130%;
+  box-sizing: border-box;
+}
+.name input{
+	background-color: rgba(232, 233, 255, 1);
+}
+
+.surname input{
+background-color: rgba(221, 225, 255, 1);
+}
+.telefon input{
+background-color: rgba(199, 205, 253, 1);
+}
+.email input{
+background-color: rgba(164, 177, 252, 1);
+}
+.order button {
+	background-color: rgb(113, 96, 207);
+	color: white;
+	border: none;
+	border-radius: 15px;
+	padding: 10px;
+	font-size: 16px;
+	cursor: pointer;
+	width: 130%;
+  }
+.order button:hover{
+	background-color:#3439d086 ;
+	transition: all 0.2s ease-in-out;
+}
+
+
+

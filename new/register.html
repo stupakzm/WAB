@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;"></html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DRONURBAN - Dron Delivery</title>
+  <link rel="stylesheet" href="../new/cons.css">
+</head>
+<body>
+    <header>
+    <nav>
+      <ul>
+        <li><a  href="../new/struktura.html">Home</a></li>
+        <li><a href="../new/register.html" id="login-link">Log in</a></li>
+
+      </ul>
+    </nav>
+  </header> 
+  <main>
+    <div class="order" id="Services">
+        <h2>Log in</h2>
+        <img src="../images/mini.svg" alt="">
+        <form>
+          <div class="name">
+            <label for="name" >Name:</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="email">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="password">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <span id="password-error" class="error"></span>
+          </div>
+          
+          <button type="submit" id="submit-auth">Submit</button>
+        </form>
+    </div>
+
+
+    <div id="profile" style="display: none;">
+      <h2>Profile</h2>
+      <img src="../images/mini.svg" alt="">
+      <form>
+        <div>
+          <p>Name: <span id="profile-name"></span></p>
+          <p>Email: <span id="profile-email"></span></p>
+          <button id="sign-out-button">Sign Out</button>
+        </div>
+      </form>
+  </div>
+</main>
+  <footer>
+    <p>&copy; 2023 DRONURBAN. All rights reserved.</p>
+    
+  </footer>
+  <script src="base.js"></script>
+  <script src="auth.js"></script>
+  <script src="signout.js"></script>
+</body>
+</html>
