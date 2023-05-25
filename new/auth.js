@@ -1,6 +1,4 @@
- 
- const passwordInput = document.querySelector('#password');
-
+const passwordInput = document.getElementById('password');
 const passwordError = document.getElementById('password-error');
 
 passwordInput.addEventListener('input', function() {
@@ -20,6 +18,7 @@ passwordInput.addEventListener('invalid', function() {
   passwordError.textContent = passwordInput.validationMessage;
 });
 
+// Check if the user is already logged in on page load
 
 
 var nameSave;
@@ -27,8 +26,41 @@ var emailSave;
 var passwordSave;
 
 
+
+window.addEventListener('DOMContentLoaded', () => {
+  const storedUser = localStorage.getItem('user');
+  const storedEmail = localStorage.getItem('email');
+
+  if (storedUser && storedEmail) {
+    // User is logged in
+    nameSave = storedUser;
+    emailSave = storedEmail;
+    passwordSave = localStorage.getItem('password');
+
+    showProfilePage();
+  }
+});
+
 // Get the form element
 const form = document.querySelector('form');
+
+async function saveTask(name, email) {
+  const response = await fetch('/tasks', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ name, email })
+  });
+
+  if (response.ok) {
+      console.log('Task saved successfully');
+  } else {
+      console.error('Error saving task:', response.statusText);
+  }
+}
+
+// Add an event listener to the form's submit event
 form.addEventListener('submit', (event) => {
   event.preventDefault(); // Prevent the form from submitting normally
 
@@ -40,58 +72,29 @@ form.addEventListener('submit', (event) => {
   // Check if the values are not empty
   if (name && email && password) {
     // Store the values in localStorage
+    localStorage.setItem('user', name);
+    localStorage.setItem('email', email);
+    localStorage.setItem('password', password);
+
     nameSave = name;
     emailSave = email;
     passwordSave = password;
 
-    localStorage.setItem('user', name);
-    localStorage.setItem('email', email);
-
-
-    document.querySelector('.order').style.display = 'none';
-    document.querySelector('#profile').style.display = 'block';
-    document.getElementById('login-link').textContent = 'Profile';
-    document.getElementById('login-link').href = '#profile';
-
-    document.getElementById('profile-name').textContent = name;
-    document.getElementById('profile-email').textContent = email;
-    saveTaskAuth();
-    
-    // Send the data to the server using a fetch request
-    fetch('/users', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ name, email })
-    })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response;
-    })
-      .then(response => response.json())
-      .then(user => {
-        console.log('user - ' + user);
-      })
-      .catch(error => {
-    console.error('Fetch error:', error);
-  });
+    showProfilePage();
+    saveTask(name, email);
   }
 });
 
+// Function to show the profile page
+function showProfilePage() {
+  // Hide the form and show the profile section
+  document.querySelector('.order').style.display = 'none';
+  document.querySelector('#profile').style.display = 'block';
+  document.getElementById('login-link').textContent = 'Profile';
+  document.getElementById('login-link').href = '#profile';
 
-  
-
-//checking func
-function isLoggedIn() {
-    
-    if (nameSave && emailSave && passwordSave) {
-        return true;
-    } else {
-        return false;
-    }
+  // Display the user's name and email on the profile page
+  document.getElementById('profile-name').textContent = nameSave;
+  document.getElementById('profile-email').textContent = emailSave;
 }
-  
 
