@@ -1,40 +1,30 @@
-// assuming the user's name is stored in a variable called `userName`
-document.cookie = `userName=${userName}`;
+// Get the Sign out button element
+const signOutButton = document.getElementById('sign-out-button');
 
-//const userName = getCookie('userName');
+// Add an event listener to the Sign out button
+signOutButton.addEventListener('click', () => {
+  // Clear the stored data in localStorage
+  localStorage.removeItem('user');
+  localStorage.removeItem('email');
+  localStorage.removeItem('password');
 
-var userName;
-if (localStorage.getItem('user')) {
-  var user = JSON.parse(localStorage.getItem('user'));
-  userName = user.name;
-} else {
-  userName = 'Guest';
-}
+  // Clear the variables
+  nameSave = null;
+  emailSave = null;
+  passwordSave = null;
 
-
-if (userName) {
-  const userNameLink = document.getElementById('profile-name');//was userNameLink
-  userNameLink.innerText = userName;
-  userNameLink.href = '#'; // add a link so it's clickable
-  //const signOutBtn = document.getElementById('signOutBtn');
-  //signOutBtn.style.display = 'block'; // show the sign out button
-}
-
-const signOutBtn = document.getElementById('signOutBtn');
-if(signOutBtn != null){
-signOutBtn.addEventListener('click', () => {
-  //document.cookie = 'userName=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-  window.location.reload(); // reload the page to clear the header
+  // Show the login form again
+  document.querySelector('.order').style.display = 'block';
+  document.querySelector('#profile').style.display = 'none';
+  document.getElementById('login-link').textContent = 'Login';
+  document.getElementById('login-link').href = '#login';
 });
-}
-function getCookie(name) {
-    const cookies = document.cookie.split(';');
-    for (let i = 0; i < cookies.length; i++) {
-      const cookie = cookies[i].trim();
-      if (cookie.startsWith(`${name}=`)) {
-        return cookie.substring(name.length + 1);
-      }
-    }
-    return null;
+
+// Function to check if the user is logged in
+function isLoggedIn() {
+  if (nameSave && emailSave && passwordSave) {
+    return true;
+  } else {
+    return false;
   }
-  
+}
