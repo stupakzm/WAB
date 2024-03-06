@@ -12,7 +12,7 @@ var mapOptions = {
 
 };
 
-//create map
+//create map sadasdas
 var map = new google.maps.Map(document.getElementById('googleMap'), mapOptions);
 
 //create a DirectionsService object to use the route method and get a result for our request
